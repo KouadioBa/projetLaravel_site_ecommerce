@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+// use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/',"Shop\MainController@index");
 
-Route::get('/', function () {
-
-    // SELECT * FROM produits;
-    $produits = App\Models\Produit::all();
-    // dd($produits);
-    
-    return view('Shop.index', compact('produits'));
-});
-
-Auth::routes();
-
-Route::get('/home', 'Shop/MainController@index');
-
+Route::get('/', 'App\Http\Controllers\Shop\MainController@index');
+Route::get('/produit/{id}', 'App\Http\Controllers\Shop\MainController@produit')->name('voir_produit');
+Route::get('/categorie', 'App\Http\Controllers\Shop\MainController@viewByCategory');
