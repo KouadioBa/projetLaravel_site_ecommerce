@@ -2,8 +2,6 @@
 
 namespace App\Http\ViewComposers;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use Illuminate\View\View;
 
